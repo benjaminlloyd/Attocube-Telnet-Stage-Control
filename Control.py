@@ -63,19 +63,6 @@ class Control():
             tn.write(str.encode('setv '+str(i)+" 30\n"))
             tn.write(str.encode('setf '+str(i)+" 150\n"))
 
-    def checker(arg,axis):
-        tn=arg.tn
-        tn.write(str.encode('getm '+str(axis)+'\r\n'))
-        return 
-
-    def real_checker(arg,axis):
-        tn=arg.tn
-        done=False
-        while done==False:
-            x=checker(axis)
-            if x==1:
-                done=True
-        return True
 
     def lowtemp_subtle(arg):
         tn=arg.tn
@@ -83,9 +70,4 @@ class Control():
             tn.write(str.encode('setv '+str(i)+" 25\n"))
             tn.write(str.encode('setf '+str(i)+" 150\n"))
         
-    def checker(arg,axis):
-        args=arg.tn
-        args.write(str.encode('getm '+str(axis)+'\r\n'))
-        args.interact()
-
- 
+   
